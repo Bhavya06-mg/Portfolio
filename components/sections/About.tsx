@@ -1,6 +1,9 @@
+"use client";
+
 import { GraduationCap, Code2, BrainCircuit } from "lucide-react";
 import FadeIn from "../ui/FadeIn";
 import Image from "next/image";
+import { useState } from "react";
 
 const INFO_CARDS = [
   { icon: GraduationCap, accent: "#5EEAD4", title: "Education", detail: "B.E Information Science Engineering" },
@@ -9,6 +12,8 @@ const INFO_CARDS = [
 ];
 
 export default function About() {
+  const [revealed, setRevealed] = useState(false);
+
   return (
     <FadeIn>
       <section id="about" className="relative min-h-screen overflow-hidden bg-[#0B0F14] px-5 py-16 sm:px-8 sm:py-24">
@@ -23,21 +28,29 @@ export default function About() {
 
           <div className="grid gap-x-12 gap-y-14 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0">
-              <div className="group relative rotate-[-3deg] transition-transform duration-500 hover:rotate-0">
+              <button
+                type="button"
+                onClick={() => setRevealed((r) => !r)}
+                aria-label="Toggle photo color"
+                className="group relative block w-full rotate-[-3deg] transition-transform duration-500 hover:rotate-0 focus:outline-none"
+              >
                 <span className="absolute -left-3 -top-3 h-8 w-8 border-l-2 border-t-2 border-[#5EEAD4]" />
                 <span className="absolute -right-3 -top-3 h-8 w-8 border-r-2 border-t-2 border-[#5EEAD4]" />
                 <span className="absolute -bottom-3 -left-3 h-8 w-8 border-b-2 border-l-2 border-[#5EEAD4]" />
                 <span className="absolute -bottom-3 -right-3 h-8 w-8 border-b-2 border-r-2 border-[#5EEAD4]" />
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-[#1C2530] bg-[#11161D]">
                   <Image
-                    src="/images/bhavyaaa.jpeg"
+                    src="/images/Formal.jpeg"
                     alt="Bhavya Madev"
                     fill
-                    className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                    className={`object-cover transition-all duration-500 group-hover:grayscale-0 ${
+                      revealed ? "grayscale-0" : "grayscale"
+                    }`}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B0F14]/70 via-transparent to-transparent" />
                 </div>
-              </div>
+              </button>
+
               <p className="mt-6 text-center font-mono text-sm tracking-widest text-[#7C8B99] lg:text-left">
                 FIG. 01 — BHAVYA MADEV / ISE STUDENT
               </p>

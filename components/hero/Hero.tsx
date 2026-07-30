@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
 const STACK_TAGS = [
-  { label: 'Java', top: '18%', left: '10%', depth: 18 },
-  { label: 'Spring Boot', top: '68%', left: '8%', depth: 28 },
-  { label: 'React.js', top: '12%', left: '84%', depth: 22 },
-  { label: 'Machine Learning', top: '72%', left: '82%', depth: 14 },
-  { label: 'Full-Stack', top: '42%', left: '92%', depth: 32 },
+  { label: "Java", top: "18%", left: "10%", depth: 18 },
+  { label: "Spring Boot", top: "68%", left: "8%", depth: 28 },
+  { label: "React.js", top: "12%", left: "84%", depth: 22 },
+  { label: "Machine Learning", top: "72%", left: "82%", depth: 14 },
+  { label: "Full-Stack", top: "42%", left: "92%", depth: 32 },
 ];
 
 export default function Hero() {
@@ -30,20 +30,20 @@ export default function Hero() {
     >
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[65%]"
-        style={{ perspective: '900px' }}
+        style={{ perspective: "900px" }}
       >
         <div
           className="absolute inset-0"
           style={{
-            transform: 'rotateX(62deg)',
-            transformOrigin: 'bottom',
+            transform: "rotateX(62deg)",
+            transformOrigin: "bottom",
             backgroundImage:
-              'linear-gradient(#1C2530 1px, transparent 1px), linear-gradient(90deg, #1C2530 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
+              "linear-gradient(#1C2530 1px, transparent 1px), linear-gradient(90deg, #1C2530 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
             maskImage:
-              'radial-gradient(ellipse 70% 100% at 50% 100%, black 40%, transparent 85%)',
+              "radial-gradient(ellipse 70% 100% at 50% 100%, black 40%, transparent 85%)",
             WebkitMaskImage:
-              'radial-gradient(ellipse 70% 100% at 50% 100%, black 40%, transparent 85%)',
+              "radial-gradient(ellipse 70% 100% at 50% 100%, black 40%, transparent 85%)",
           }}
         />
       </div>
@@ -67,7 +67,7 @@ export default function Hero() {
             transform: `translate3d(${mouse.x * tag.depth}px, ${
               mouse.y * tag.depth
             }px, 0)`,
-            transition: 'transform 0.15s ease-out',
+            transition: "transform 0.15s ease-out",
           }}
         >
           {tag.label}
@@ -91,7 +91,7 @@ export default function Hero() {
         </h1>
 
         <h2 className="mt-5 text-lg font-medium text-[#7C8B99] sm:text-2xl md:text-3xl">
-          Information Science Engineer,{' '}
+          Information Science Engineer,{" "}
           <span className="relative inline-block text-[#E7ECF0]">
             building systems that scale.
             <span className="animate-underline-sweep absolute -bottom-1 left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-[#5EEAD4] to-transparent bg-[length:200%_auto]" />
@@ -100,12 +100,19 @@ export default function Hero() {
 
         <p className="mx-auto mt-8 max-w-xl text-base leading-7 text-[#7C8B99] sm:text-lg sm:leading-8">
           I turn ideas into full-stack products — Java and Spring on the
-          backend, React up front, and a growing habit of bolting AI onto
-          things that don't strictly need it (but are better for it).
+          backend, React up front, and a growing habit of bolting AI onto things
+          that don't strictly need it (but are better for it).
         </p>
 
         <div className="mt-12 flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
-          <button className="w-full max-w-xs rounded-xl bg-[#5EEAD4] px-7 py-3 font-semibold text-[#0B0F14] transition hover:bg-[#7FF3E1] sm:w-auto">
+          <button
+            onClick={() =>
+              document.getElementById("projects")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+            className="w-full max-w-xs rounded-xl bg-[#5EEAD4] px-7 py-3 font-semibold text-[#0B0F14] transition hover:bg-[#7FF3E1] sm:w-auto"
+          >
             View Projects
           </button>
 
@@ -119,7 +126,7 @@ export default function Hero() {
         </div>
 
         <a
-          href="mailto:you@example.com"
+          href="mailto:bhavyamadev681@gmail.com"
           className="mt-8 font-mono text-sm text-[#7C8B99] underline decoration-[#7C8B99]/40 underline-offset-4 transition hover:text-[#5EEAD4]"
         >
           or just say hi →
