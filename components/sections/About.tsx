@@ -30,7 +30,7 @@ export default function About() {
                 <span className="absolute -bottom-3 -right-3 h-8 w-8 border-b-2 border-r-2 border-[#5EEAD4]" />
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-[#1C2530] bg-[#11161D]">
                   <Image
-                    src="/images/bhavya.jpeg"
+                    src="/images/bhavyaaa.jpeg"
                     alt="Bhavya Madev"
                     fill
                     className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
